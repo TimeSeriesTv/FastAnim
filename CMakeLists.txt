@@ -33,3 +33,4 @@ set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} ${Boost_CFLAGS_OTHER})
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/examples )
 add_executable(logo.asm.js ${SOURCE_FILES} examples/logo.cpp)
+add_executable(pong.asm.js ${SOURCE_FILES} examples/pong.cpp)

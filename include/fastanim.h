@@ -29,6 +29,7 @@ namespace fanim {
 #include "../src/transformation/CombinedTransformation.h"
 #include "../src/transformation/TranslateTransformation.h"
 #include "../src/transformation/ScaleTransformation.h"
+#include "../src/transformation/RotateTransformation.h"
 
 #include "../src/camera/Camera.h"
 #include "../src/camera/LookAtCamera.h"
@@ -38,6 +39,6 @@ namespace fanim {
 
 #include "../src/view/View.h"
 
-
+#include "../src/relative/RelativePosition.h"
 
 #endif //FASTANIM_FASTANIM_H
