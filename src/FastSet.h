@@ -16,9 +16,13 @@ namespace fanim {
   public:
     std::vector<std::shared_ptr<ElementType>> buffer;
 
+    FastSet() {}
+    ~FastSet() {}
+
     int search;
 
     int add(std::shared_ptr<ElementType> element) {
+      fgfx_log("BUFFER SIZE %d",(int)(buffer.size()));
       int len = buffer.size();
       if(len) {
         for (int i = search + 1; i != search; i = (i + 1) % len) {
@@ -29,7 +33,7 @@ namespace fanim {
           }
         }
       }
-      search = buffer.size();
+      search = len;
       buffer.resize(search+1024);
       buffer[search]=element;
       return search;
@@ -57,6 +61,16 @@ namespace fanim {
       return boost::make_filter_iterator<is_element>(buffer.end(), buffer.end());
     }
 
+    std::shared_ptr<ElementType>& operator[](unsigned int id) {
+      return buffer[id];
+    }
+    const std::shared_ptr<ElementType>& operator[](unsigned int id) const {
+      return buffer[id];
+    }
+
+    unsigned int size() {
+      return buffer.size();
+    }
   };
 
 }
